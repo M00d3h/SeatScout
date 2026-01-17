@@ -262,15 +262,89 @@ while True:
         # Displaying the metrics in the admin page
         if admin_view:
             c1,c2,c3,c4 = metrics_slot.columns(4)
-            c1.metric("🪑 Total Seats", total_seats)
-            c2.metric("🔴 Occupied Seats", occupied_seats)
-            c3.metric("🟢 Unoccupied Seats", vacant_seats)
-            c4.metric("👥 People Detected", people_detected)
+            card_style = """
+                width: 160px;
+                height: 120px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                background-color: #2a2e2d;
+                border-radius: 15px;
+                box-sizing: border-box;
+            """
+            text_color = "#ecebe9"
+            c1.markdown(f"""
+            <div style='{card_style}'>
+                <span style='font-size: 2.1rem; color: #ff7f0e;'>🪑</span>
+                <span style='font-size: 1.22rem; color: #ff7f0e; font-weight: 600;'>Total Seats</span>
+                <span style='font-size: 2.2rem; color: {text_color}; font-weight: 700;'>{total_seats}</span>
+            </div>
+            """, unsafe_allow_html=True)
+            c2.markdown(f"""
+            <div style='{card_style}'>
+                <span style='font-size: 2.1rem; color: #ff3b3b;'>🔴</span>
+                <span style='font-size: 1.22rem; color: #ff3b3b; font-weight: 600;'>Occupied Seats</span>
+                <span style='font-size: 2.2rem; color: {text_color}; font-weight: 700;'>{occupied_seats}</span>
+            </div>
+            """, unsafe_allow_html=True)
+            c3.markdown(f"""
+            <div style='{card_style}'>
+                <span style='font-size: 2.1rem; color: #39e639;'>🟢</span>
+                <span style='font-size: 1.22rem; color: #39e639; font-weight: 600;'>Vacant Seats</span>
+                <span style='font-size: 2.2rem; color: {text_color}; font-weight: 700;'>{vacant_seats}</span>
+            </div>
+            """, unsafe_allow_html=True)
+            c4.markdown(f"""
+            <div style='{card_style}'>
+                <span style='font-size: 2.1rem; color: #36cfff;'>👥</span>
+                <span style='font-size: 1.22rem; color: #36cfff; font-weight: 600;'>People Detected</span>
+                <span style='font-size: 2.2rem; color: {text_color}; font-weight: 700;'>{people_detected}</span>
+            </div>
+            """, unsafe_allow_html=True)
         # Displaying metrics in the user page
         else:
             with user_stats_placeholder.container():
                 cols = st.columns(4)
-                cols[0].metric("🪑 Total Seats", total_seats)
-                cols[1].metric("🔴 Occupied Seats", occupied_seats)
-                cols[2].metric("🟢 Unoccupied Seats", vacant_seats)
-                cols[3].metric("👥 People Detected", people_detected)
+                card_style = """
+                    width: 160px;
+                    height: 120px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 10px;
+                    background-color: #2a2e2d;
+                    border-radius: 15px;
+                    box-sizing: border-box;
+                """
+                text_color = "#ecebe9"
+                cols[0].markdown(f"""
+                <div style='{card_style}'>
+                    <span style='font-size: 2.1rem; color: #ff7f0e;'>🪑</span>
+                    <span style='font-size: 1.22rem; color: #ff7f0e; font-weight: 600;'>Total Seats</span>
+                    <span style='font-size: 2.2rem; color: {text_color}; font-weight: 700;'>{total_seats}</span>
+                </div>
+                """, unsafe_allow_html=True)
+                cols[1].markdown(f"""
+                <div style='{card_style}'>
+                    <span style='font-size: 2.1rem; color: #ff3b3b;'>🔴</span>
+                    <span style='font-size: 1.22rem; color: #ff3b3b; font-weight: 600;'>Occupied Seats</span>
+                    <span style='font-size: 2.2rem; color: {text_color}; font-weight: 700;'>{occupied_seats}</span>
+                </div>
+                """, unsafe_allow_html=True)
+                cols[2].markdown(f"""
+                <div style='{card_style}'>
+                    <span style='font-size: 2.1rem; color: #39e639;'>🟢</span>
+                    <span style='font-size: 1.22rem; color: #39e639; font-weight: 600;'>Vacant Seats</span>
+                    <span style='font-size: 2.2rem; color: {text_color}; font-weight: 700;'>{vacant_seats}</span>
+                </div>
+                """, unsafe_allow_html=True)
+                cols[3].markdown(f"""
+                <div style='{card_style}'>
+                    <span style='font-size: 2.1rem; color: #36cfff;'>👥</span>
+                    <span style='font-size: 1.22rem; color: #36cfff; font-weight: 600;'>People Detected</span>
+                    <span style='font-size: 2.2rem; color: {text_color}; font-weight: 700;'>{people_detected}</span>
+                </div>
+                """, unsafe_allow_html=True)

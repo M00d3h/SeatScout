@@ -3,3 +3,12 @@ primaryColor="#adc3c0"
 backgroundColor="#1a1d1c"
 secondaryBackgroundColor="#2a2e2d"
 textColor="#ecebe9"
+
+[server]
+headless = true
+enableCORS = false
+address = "0.0.0.0"
+port = 8501
+
+[browser]
+serverAddress = "192.168.2.66"
