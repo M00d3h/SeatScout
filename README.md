@@ -4,7 +4,7 @@ SeatScout is a real-time seat occupancy detection system designed to solve the c
 
 ## 🚀 Live Demo
 
-<video src="assets/demo.mp4" controls width="100%" style="border-radius: 10px; margin-top: 10px;"></video>
+<img src="assets/demo.gif" alt="SeatScout Demo" width="100%" style="border-radius: 10px; margin-top: 10px;" />
 
 ## 💡 Key Features
 
